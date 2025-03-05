@@ -179,10 +179,10 @@ def main():
         z_p, pronoun_lens, audio_len = sess_enc.run(None, input_feed={
                                     'phone': phones, 'g': g,
                                     'tone': tones, 'language': lang_ids, 
-                                    'noise_scale': np.array([0], dtype=np.float32),
+                                    'noise_scale': np.array([0.6], dtype=np.float32),
                                     'length_scale': np.array([1.0 / args.speed], dtype=np.float32),
-                                    'noise_scale_w': np.array([0], dtype=np.float32),
-                                    'sdp_ratio': np.array([0], dtype=np.float32)})
+                                    'noise_scale_w': np.array([0.8], dtype=np.float32),
+                                    'sdp_ratio': np.array([0.2], dtype=np.float32)})
         print(f"encoder run take {1000 * (time.time() - start):.2f}ms")
 
         # 计算每个词的发音长度
